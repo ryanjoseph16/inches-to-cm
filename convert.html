@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="convert.css">
+</head>
+<body>
+  <div class = "convertBtn">
+    <div class="inner-content">
+       <input class="inches" id="inches" type="text" placeholder="Inches to centimeter">
+    <button class="btn"  onclick="convert()">Convert</button>
+    </div>
+   
+
+    <div class="content" id="content"></div>
+  </div>
+  
+
+
+  
+
+  <script>
+    let convertedValue;
+    let cm = 2.54;
+
+    function convert(){
+      const textbox = document.getElementById('inches');
+      const inches = textbox.value;
+      convertedValue = inches * cm;
+
+      render();
+    };
+
+    function render() {
+      let element = document.createElement('div');
+      element.innerText = convertedValue;
+      let content = document.getElementById('content');
+      content.appendChild(element);
+    }
+
+  </script>
+</body>
+</html>
